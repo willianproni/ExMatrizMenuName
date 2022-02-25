@@ -76,7 +76,7 @@ namespace MatrizInsertName
                 {
                     Console.Clear();
                     Console.WriteLine("Nenhuma Matriz inserida!!");
-                   
+
                     Console.Clear();
                 }
                 else
@@ -86,7 +86,7 @@ namespace MatrizInsertName
                     for (int l = linha; l <= linha; l++)
                     {
                         for (int c = 0; c < matriz.GetLength(1); c++)
-                        { 
+                        {
                             Console.WriteLine(matriz[l, c]);
                         }
                     }
@@ -170,21 +170,17 @@ namespace MatrizInsertName
                 else
                 {
                     Console.WriteLine("Linha que deseja ordenar 0 a 2:");
-                    int linha = int.Parse(Console.ReadLine());
-                    for (int l = linha; l <= linha; l++)
+                    int l = int.Parse(Console.ReadLine());
+                    for (int c = 0; c < matriz.GetLength(1); c++)
                     {
-                        for (int c = 0; c < matriz.GetLength(1); c++)
+                        for (int a = 0; a < matriz.GetLength(1); a++)
                         {
-                            for (int a = 0; a < matriz.GetLength(1); a++)
+                            if (matriz[l, a].CompareTo(matriz[l, c]) == 1)
                             {
-                                if (matriz[l, a].CompareTo(matriz[l, c]) == 1)
-                                {
-                                    string suport = matriz[l, a];
-                                    matriz[l, a] = matriz[l, c];
-                                    matriz[l, c] = suport;
-                                }
+                                string suport = matriz[l, a];
+                                matriz[l, a] = matriz[l, c];
+                                matriz[l, c] = suport;
                             }
-
                         }
                     }
                 }
